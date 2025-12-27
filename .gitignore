@@ -915,3 +915,8 @@ config/database.yml
 *.zip
 
 # ===== END =====
+
+# Project overrides
+!/public/
+!/public/**
+!/public/*.zip

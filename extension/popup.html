@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>uOrigin Advanced Shield</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>uOrigin Advanced Shield</h1>
+        <button id="toggle-protection" class="primary"></button>
+      </header>
+      <section>
+        <div class="metric">
+          <span class="label">Requests blocked</span>
+          <span id="blocked-count" class="value">0</span>
+        </div>
+        <div class="metric">
+          <span class="label">Active filter lists</span>
+          <span id="active-lists" class="value">0</span>
+        </div>
+        <div class="metric">
+          <span class="label">Last sync</span>
+          <span id="last-sync" class="value">Never</span>
+        </div>
+      </section>
+      <footer>
+        <a id="open-dashboard" href="#">Open control center</a>
+        <button id="refresh">Refresh filters</button>
+      </footer>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

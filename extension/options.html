@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>uOrigin Advanced Shield — Options</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>uOrigin Advanced Shield</h1>
+        <p>Manage filter subscriptions, custom rules, and background updates.</p>
+        <button id="refresh-button">Refresh Now</button>
+        <span id="status"></span>
+      </header>
+
+      <section>
+        <h2>Filter Subscriptions</h2>
+        <ul id="list-container"></ul>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <h2>Custom Rules</h2>
+          <button id="add-custom">Add Rule</button>
+        </div>
+        <ul id="custom-container"></ul>
+      </section>
+    </main>
+    <template id="list-template">
+      <li>
+        <label>
+          <input type="checkbox" />
+          <span class="name"></span>
+        </label>
+        <div class="meta">
+          <span class="rules"></span>
+          <span class="status"></span>
+        </div>
+        <a class="source" target="_blank" rel="noreferrer noopener">View source</a>
+      </li>
+    </template>
+    <template id="custom-template">
+      <li>
+        <label>
+          <input type="checkbox" class="enabled" />
+          <span class="expression"></span>
+        </label>
+        <div class="actions">
+          <button class="edit">Edit</button>
+          <button class="delete">Remove</button>
+        </div>
+      </li>
+    </template>
+    <dialog id="custom-dialog">
+      <form method="dialog">
+        <h3 id="custom-dialog-title">Custom Rule</h3>
+        <label>
+          Expression
+          <textarea id="custom-expression" rows="3" required></textarea>
+        </label>
+        <label>
+          Action
+          <select id="custom-type">
+            <option value="block">Block</option>
+            <option value="allow">Allow</option>
+          </select>
+        </label>
+        <menu>
+          <button value="cancel">Cancel</button>
+          <button value="save" class="primary">Save</button>
+        </menu>
+      </form>
+    </dialog>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>
